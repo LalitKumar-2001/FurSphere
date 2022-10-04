@@ -9,6 +9,12 @@ class MedicalPage extends StatefulWidget {
 class _MedicalPageState extends State<MedicalPage> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      body: SafeArea(
+      child:Column(
+        children: [Text("Hello")],
+      ),
+    )
+    );
   }
 }

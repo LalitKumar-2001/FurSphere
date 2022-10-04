@@ -26,7 +26,7 @@ class _SplashState extends State<Splash> {
       body: Center(
         child: const Text('PetsBook',style: TextStyle(
           fontSize: 36,
-          fontWeight: FontWeight.bold,
+          fontWeight: FontWeight.w800,
           fontFamily: 'Inspiration',
         ),
         ),

@@ -5,13 +5,19 @@ import 'package:petsbook/medical.dart';
 import 'package:petsbook/profile.dart';
 import 'package:petsbook/shopping.dart';
 import 'package:petsbook/splashscreen.dart';
-void main() {
+import "package:story_view/story_view.dart";
+import 'package:petsbook/status_screen.dart';
+
+void main()
+{
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
     home: Splash(),
   ));
 }
-class MyApp extends StatefulWidget {
+
+class MyApp extends StatefulWidget
+{
   const MyApp({Key? key}) : super(key: key);
 
   @override
@@ -20,8 +26,9 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
 
-  int currentindex=1;
-  final screens =[
+  int currentindex=0;
+  final screens =
+  [
     HomePage(),
     MedicalPage(),
     ShoppingPage(),
@@ -39,7 +46,8 @@ class _MyAppState extends State<MyApp> {
         selectedItemColor: Colors.black,
         selectedLabelStyle: TextStyle(fontSize: 11),
         onTap: (index)=>setState(()=>currentindex = index),
-        items:[
+        items:
+        [
           BottomNavigationBarItem(
               icon: Icon(Icons.home,color:HexColor("#25262d")),
               label: 'Profile'),
@@ -56,3 +64,14 @@ class _MyAppState extends State<MyApp> {
   }
 }
 
+// class Palette {
+//   // background gradient
+//   static Color blueSky = Color(0xFF068FFA);
+//   static Color greenLand = Color(0xFF89ED91);
+//
+//   // card gradient
+//   static Color blueSkyLight = Color(0x40068FFA);
+//   static Color greenLandLight = Color(0x4089ED91);
+//
+//   static Color blueSkyLighter = Color(0x10068FFA);
+// }

@@ -36,24 +36,23 @@ class _HomePageState extends State<HomePage> {
       body:SafeArea(
         child: Column(
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: const [
-                Text("PetsBook"),
-                Text("NewFeed"),
-                Icon(Icons.search)
-              ],
+            Container(
+              // color: Colors.red,
+              margin: EdgeInsets.all(2.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Text("PetsBook"),
+                  Text("NewFeed"),
+                  IconButton(onPressed: (){}, icon: Icon(Icons.search),)
+                ],
+              ),
             ),
-            // ListView(
-            //   children: const [
-            //     ListTile(title: Text("Text-1")),
-            //   ],
-            // )
             Expanded(
               child: ListView(
                 children: [
                   Container(
-                    margin: EdgeInsets.fromLTRB(0,10, 0, 0),
+                    // margin: EdgeInsets.fromLTRB(0,10, 0, 0),
                     height: 80,
                     width:size.width*0.9,
                     color: Colors.red,
