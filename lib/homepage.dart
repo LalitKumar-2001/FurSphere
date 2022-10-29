@@ -52,10 +52,9 @@ class _HomePageState extends State<HomePage> {
               child: ListView(
                 children: [
                   Container(
-                    // margin: EdgeInsets.fromLTRB(0,10, 0, 0),
                     height: 80,
                     width:size.width*0.9,
-                    color: Colors.red,
+                    color: Colors.white30,
                     child: ListView(
                       physics: BouncingScrollPhysics(),
                       scrollDirection: Axis.horizontal,
@@ -80,7 +79,10 @@ class _HomePageState extends State<HomePage> {
                       children:[
                         PostWidget(),
                         PostWidget(),
-                        PostWidget()]
+                        PostWidget(),
+                        PostWidget(),
+                        PostWidget(),
+                        PostWidget(),]
                   )
                 ],
               ),
@@ -132,7 +134,7 @@ class _PostWidgetState extends State<PostWidget> {
           Container(
             height: size.height*0.4,
             width: size.width*0.9,
-            child: Image.network('https://picsum.photos/300/250'),
+            child: Image.network('https://picsum.photos/400',fit: BoxFit.fill),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(130)
             ),

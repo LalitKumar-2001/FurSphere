@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "/Users/Lalit/StudioProjects/petsbook/build/video_player_android/intermediates/res/merged/debug/drawable/notification_icon_background.xml",
+        "source": "/Users/Lalit/.gradle/caches/transforms-3/b529183f4e782660cedad89e64f83446/transformed/core-1.7.0/res/drawable/notification_icon_background.xml"
+    },
+    {
+        "merged": "/Users/Lalit/StudioProjects/petsbook/build/video_player_android/intermediates/res/merged/debug/drawable/notification_tile_bg.xml",
+        "source": "/Users/Lalit/.gradle/caches/transforms-3/b529183f4e782660cedad89e64f83446/transformed/core-1.7.0/res/drawable/notification_tile_bg.xml"
+    },
+    {
+        "merged": "/Users/Lalit/StudioProjects/petsbook/build/video_player_android/intermediates/res/merged/debug/drawable/notification_bg_low.xml",
+        "source": "/Users/Lalit/.gradle/caches/transforms-3/b529183f4e782660cedad89e64f83446/transformed/core-1.7.0/res/drawable/notification_bg_low.xml"
+    },
+    {
+        "merged": "/Users/Lalit/StudioProjects/petsbook/build/video_player_android/intermediates/res/merged/debug/drawable/notification_bg.xml",
+        "source": "/Users/Lalit/.gradle/caches/transforms-3/b529183f4e782660cedad89e64f83446/transformed/core-1.7.0/res/drawable/notification_bg.xml"
+    }
+]

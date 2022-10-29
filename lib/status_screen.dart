@@ -14,16 +14,15 @@ class _statusScreenState extends State<statusScreen> {
   Widget build(BuildContext context) {
     return Container(
       height: 40,
-        width: 80,
-        color: Colors.black,
+      width: 80,
       child:Column(
         children: [
           CircleAvatar(
             // backgroundImage: AssetImage("assets/images/carbon.png"),
-            backgroundImage: NetworkImage("https://picsum.photos/id/1/200/300"),
+            backgroundImage: NetworkImage("https://picsum.photos/id/11/800"),
             radius: 30,
           ),
-          Text("Name",style: TextStyle(color: Colors.white),)
+          Text("Name")
         ],
       ),
     );
