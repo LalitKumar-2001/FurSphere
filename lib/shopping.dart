@@ -53,7 +53,7 @@ class _ShoppingPageState extends State<ShoppingPage> {
               child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text("Petshop",style: TextStyle(fontWeight: FontWeight.w900, fontSize: 20)),
+                    Text("Petshop",style: TextStyle(fontWeight: FontWeight.w800, fontSize: 20)),
                     IconButton(onPressed: (){}, icon:Icon(Icons.shopping_cart_outlined),)
                   ],
                 ),
@@ -112,20 +112,17 @@ class _ShoppingPageState extends State<ShoppingPage> {
 
             //Items List
             Container(
-              height: size.height*0.35,
+              height: size.height*0.32,
               child: ListView(
                 scrollDirection: Axis.horizontal,
-                shrinkWrap: true,
+                // shrinkWrap: true,
                 children: [
-                  ItemCard(),
-                  ItemCard(),
-                  ItemCard(),
-                  ItemCard(),
-                  ItemCard(),
-                  ItemCard(),
-                  ItemCard(),
-                  ItemCard(),
-
+                  cardd(size),
+                  cardd(size),
+                  cardd(size),
+                  cardd(size),
+                  cardd(size),
+                  cardd(size),
                 ],
               ),
             ),
@@ -133,15 +130,16 @@ class _ShoppingPageState extends State<ShoppingPage> {
             //Other Product Heading
             Container(
               alignment: Alignment.centerLeft,
-                padding: EdgeInsets.all(6),
+                padding: EdgeInsets.all(5),
                 child: Text("Other Products", style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),)
             ),
 
             //Other Product Image List
             Container(
                 // color: Colors.red,
-                height: size.height*0.18,
+                height: size.height*0.21,
                 width:size.width*1,
+                padding: EdgeInsets.all(3),
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   shrinkWrap: true,
@@ -155,27 +153,28 @@ class _ShoppingPageState extends State<ShoppingPage> {
                   ],
                 ),
             ),
+            // Container(
+            //   width: size.width*1,
+            //   height: size.height*0.09,
+            //   margin: EdgeInsets.fromLTRB(4, 10, 4, 10),
+            //   child: Row(
+            //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //     crossAxisAlignment: CrossAxisAlignment.start,
+            //     children: [
+            //       Text("Ad", style: TextStyle(fontSize: 20)),
+            //       ElevatedButton.icon(onPressed: (){}, icon:Icon(Icons.info_outline_rounded), label: Text("KnowMore"))
+            //     ],
+            //   ),
+            //   // child: Text("Ad", style: TextStyle(fontSize: 20)),
+            //   decoration: BoxDecoration(
+            //     // color: Colors.grey,
+            //     image: DecorationImage(image: AssetImage('assets/images/adImage.jpeg'), fit: BoxFit.fill)
+            //   ),
+            // ),
             Container(
-              width: size.width*1,
-              height: size.height*0.09,
-              margin: EdgeInsets.fromLTRB(4, 10, 4, 10),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text("Ad", style: TextStyle(fontSize: 20)),
-                  ElevatedButton.icon(onPressed: (){}, icon:Icon(Icons.info_outline_rounded), label: Text("KnowMore"))
-                ],
-              ),
-              // child: Text("Ad", style: TextStyle(fontSize: 20)),
-              decoration: BoxDecoration(
-                // color: Colors.grey,
-                image: DecorationImage(image: AssetImage('assets/images/adImage.jpeg'), fit: BoxFit.fill)
-              ),
-            ),
-            Container(
-              height: size.height*0.05,
+              height: size.height*0.06,
               color: Colors.black,
+              margin: EdgeInsets.only(top:15),
               child: SizedBox(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -191,6 +190,46 @@ class _ShoppingPageState extends State<ShoppingPage> {
       ),
     );
   }
+
+  Widget cardd (Size size)
+  {
+    return Container(
+      height: size.height*0.20,
+      width: size.width*0.43,
+      // color: Colors.red,
+      margin: EdgeInsets.all(4),
+      padding: EdgeInsets.fromLTRB(8, 0, 8, 0),
+      child: Column(
+        children: [
+          Container(
+            height: size.height*0.25,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: NetworkImage("https://picsum.photos/600",),fit: BoxFit.fill
+              ),
+              // border: Border.all(style: BorderStyle.solid,width: 2),
+                borderRadius: BorderRadius.circular(20)
+            ),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text("Fresh Kises"),
+                  Text("Rs 38.39")
+                ],
+              ),
+              IconButton(onPressed: (){}, icon: Icon(Icons.add_circle))
+            ],
+          )
+        ],
+      ),
+    );
+  }
+
 }
 class Product extends StatefulWidget {
   const Product({Key? key}) : super(key: key);
@@ -214,38 +253,5 @@ class _ProductState extends State<Product> {
   }
 }
 
-class ItemCard extends StatefulWidget {
-  const ItemCard({Key? key}) : super(key: key);
 
-  @override
-  State<ItemCard> createState() => _ItemCardState();
-}
 
-class _ItemCardState extends State<ItemCard> {
-  @override
-  Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    return Container(
-      width: size.width*0.49,
-      //color: Colors.red,
-      margin: EdgeInsets.all(5),
-      child: Stack(
-        children: [
-          Positioned(
-              child: Container(
-                margin: EdgeInsets.fromLTRB(2, 0, 10,0),
-                height: size.height*0.29,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15.0),
-                  image: DecorationImage(image: NetworkImage("https://picsum.photos/200"), fit: BoxFit.fill,),
-                ),
-              )
-          ),
-          Positioned(child: Text("ItemName",style:TextStyle(fontSize:17)), bottom: 25, left: 6),
-          Positioned(child: Text("ItemPrice",style:TextStyle(fontSize:17)), bottom: 3, left: 6),
-          Positioned(child: IconButton(onPressed: (){}, icon: Icon(Icons.add_circle,size: 30,)), right: 10, bottom: 3,)
-        ],
-      ),
-    );
-  }
-}
