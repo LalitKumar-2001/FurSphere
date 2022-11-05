@@ -15,24 +15,6 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      // appBar: AppBar(
-      //   title:Text("PetsBook"),
-      //   actions: [
-      //     IconButton(
-      //         icon: Icon(Icons.search),
-      //         tooltip: "Search",
-      //         onPressed: (){})
-      //   ],
-      //   leading: Text("Petsbook",style: TextStyle(fontSize: 20),)
-      //   // toolbarHeight: 50.2,
-      //   // toolbarOpacity: 0.7,
-      //   // elevation: 3.00,
-      //   // shape: const RoundedRectangleBorder(
-      //   //   borderRadius: BorderRadius.only(
-      //   //       bottomRight: Radius.circular(25),
-      //   //       bottomLeft: Radius.circular(25)),
-      //   // ),
-      //   ),
       body:SafeArea(
         child: Column(
           children: [
@@ -117,7 +99,7 @@ class _PostWidgetState extends State<PostWidget> {
               Container(
                 child: Row(
                   children: [
-                    CircleAvatar(radius:20,backgroundImage:NetworkImage('https://picsum.photos/200/100')),
+                    CircleAvatar(radius:20,backgroundImage:AssetImage("assets/images/pic.png")),
                     SizedBox(width: 10),
                     Column(
                       crossAxisAlignment:CrossAxisAlignment.start,

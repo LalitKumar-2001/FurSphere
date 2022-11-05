@@ -1,4 +1,4 @@
-#Mon Oct 31 02:55:08 IST 2022
+#Wed Nov 02 17:43:13 IST 2022
 base.0=/Users/Lalit/StudioProjects/petsbook/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
 renamed.0=classes.dex
 path.0=classes.dex

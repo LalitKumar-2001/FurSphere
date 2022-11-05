@@ -48,15 +48,17 @@ class _ShoppingPageState extends State<ShoppingPage> {
       body: SafeArea(
         child: Column(
           children: [
-            Container(
-              margin: EdgeInsets.fromLTRB(5.0, 0, 5.0, 0),
-              child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text("Petshop",style: TextStyle(fontWeight: FontWeight.w800, fontSize: 20)),
-                    IconButton(onPressed: (){}, icon:Icon(Icons.shopping_cart_outlined),)
-                  ],
-                ),
+            Flexible(
+              child: Container(
+                margin: EdgeInsets.fromLTRB(5.0, 0, 5.0, 0),
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text("Petshop",style: TextStyle(fontWeight: FontWeight.w800, fontSize: 20)),
+                      IconButton(onPressed: (){}, icon:Icon(Icons.shopping_cart_outlined),)
+                    ],
+                  ),
+              ),
             ),
             Container(
               width: size.width*0.95,

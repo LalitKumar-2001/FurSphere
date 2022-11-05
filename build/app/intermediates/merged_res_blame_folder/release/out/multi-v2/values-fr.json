@@ -1,0 +1,36 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Users/Lalit/StudioProjects/petsbook/build/app/intermediates/incremental/mergeReleaseResources/merged.dir/values-fr/values-fr.xml",
+            "map": [
+                {
+                    "source": "/Users/Lalit/.gradle/caches/transforms-3/a1ec4852ac20bb65678ce0cf1612db17/transformed/jetified-exoplayer-core-2.18.1/res/values-fr/values-fr.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,129,194,263,335,418,495,592,685",
+                        "endColumns": "73,64,68,71,82,76,96,92,82",
+                        "endOffsets": "124,189,258,330,413,490,587,680,763"
+                    }
+                },
+                {
+                    "source": "/Users/Lalit/.gradle/caches/transforms-3/b529183f4e782660cedad89e64f83446/transformed/core-1.7.0/res/values-fr/values-fr.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "11",
+                        "startColumns": "4",
+                        "startOffsets": "768",
+                        "endColumns": "100",
+                        "endOffsets": "864"
+                    }
+                }
+            ]
+        }
+    ]
+}
