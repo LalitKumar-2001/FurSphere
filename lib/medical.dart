@@ -23,7 +23,9 @@ class _MedicalPageState extends State<MedicalPage> {
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.red
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>ProfileDetailPage()));
+                },
               ),
               decoration: BoxDecoration(
                 // color: Colors.red,
@@ -40,13 +42,13 @@ class _MedicalPageState extends State<MedicalPage> {
               child: ListView(
                 shrinkWrap: true,
                 children: [
-                  Vets(),
-                  Vets(),
-                  Vets(),
-                  Vets(),
-                  Vets(),
-                  Vets(),
-                  Vets(),
+                  Vets(size),
+                  Vets(size),
+                  Vets(size),
+                  Vets(size),
+                  Vets(size),
+                  Vets(size),
+                  Vets(size),
                 ],
               ),
               decoration: BoxDecoration(
@@ -55,19 +57,16 @@ class _MedicalPageState extends State<MedicalPage> {
               ),
             ),
             Text("NGOs Profile",textAlign: TextAlign.center,style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
-            Container(
-              width: size.width*0.9,
-              height: size.height*0.32,
-              // color: Colors.blue,
-              child:ListView(
+            Expanded(
+              child: ListView(
+                padding: EdgeInsets.fromLTRB(25,0,10,0),
                 children: [
-                  ngo(),
-                  ngo(),
-                  ngo(),
-                  ngo(),
-                  ngo(),
-                  ngo(),
-                  ngo(),
+                  NGO(size),
+                  NGO(size),
+                  NGO(size),
+                  NGO(size),
+                  NGO(size),
+                  NGO(size),
                 ],
               ),
             ),
@@ -76,18 +75,10 @@ class _MedicalPageState extends State<MedicalPage> {
     )
     );
   }
-}
-class Vets extends StatefulWidget {
-  const Vets({Key? key}) : super(key: key);
 
-  @override
-  State<Vets> createState() => _VetsState();
-}
-
-class _VetsState extends State<Vets> {
-  @override
-  Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+  //Vets Widget
+  Widget Vets(Size size)
+  {
     return Container(
       height: size.height*0.07,
       // color: Colors.yellow,
@@ -101,28 +92,19 @@ class _VetsState extends State<Vets> {
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text("Name of the Place",style: TextStyle(fontWeight: FontWeight.bold, wordSpacing: 2.5),),
-            Text("Phone Number"),
-          ],
+            children: [
+              Text("Name of the Place",style: TextStyle(fontWeight: FontWeight.bold, wordSpacing: 2.5),),
+              Text("Phone Number"),
+            ],
           )
         ],
       ),
     );
   }
-}
 
-class ngo extends StatefulWidget {
-  const ngo({Key? key}) : super(key: key);
-
-  @override
-  State<ngo> createState() => _ngoState();
-}
-
-class _ngoState extends State<ngo> {
-  @override
-  Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+  //NGO Widget
+  Widget NGO(Size size)
+  {
     return Container(
       height: size.height*0.07,
       // color: Colors.yellow,
@@ -142,22 +124,218 @@ class _ngoState extends State<ngo> {
             ],
           ),
           Container(
-            margin: EdgeInsets.all(5),
-            height: size.height*0.04,
-            width: size.width*0.4,
-            // color: Colors.red,
-            child:Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(Icons.star,color: Colors.amber),
-                Icon(Icons.star,color: Colors.amber),
-                Icon(Icons.star,color: Colors.amber),
-                Icon(Icons.star,color: Colors.amber),
-              ],
-            )
+              margin: EdgeInsets.all(5),
+              height: size.height*0.04,
+              width: size.width*0.4,
+              // color: Colors.red,
+              child:Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(Icons.star,color: Colors.amber),
+                  Icon(Icons.star,color: Colors.amber),
+                  Icon(Icons.star,color: Colors.amber),
+                  Icon(Icons.star,color: Colors.amber),
+                ],
+              )
           )
         ],
       ),
     );
   }
+
+}
+class ProfileDetailPage extends StatelessWidget {
+  const ProfileDetailPage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+    return Scaffold(
+      body: SafeArea(
+        child: Column(
+          children: [
+            Container(
+              height: size.height*0.3,
+              width: size.height*1,
+              // color:Colors.pink,
+              child:ClipPath( clipper: ClipPathClass(),
+                  child: SizedBox(
+                  width: 320,
+                  height: 240,
+                  child: Image.asset(
+                    "assets/images/dogprofile.jpeg",
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+              // decoration: BoxDecoration(
+              //   color: Colors.red,
+              //   image: DecorationImage(
+              //     image: AssetImage('assets/images/dogprofile.jpeg')
+              //   )
+              // ),
+            ),
+            Container(
+              margin: EdgeInsets.fromLTRB(0, 10, 0, 5),
+              // color: Colors.red,
+              height: size.height*0.13,
+              width:size.width*1,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text("Pluto Clinic",style: TextStyle(fontSize: 30,color: Colors.black,fontWeight: FontWeight.bold),),
+                  Text("Khannagar,Infront of Shreekunj apartment",),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(Icons.phone),
+                      Text("+91 9178885550"),
+                    ],
+                  )
+                ],
+              ),
+            ),
+            SizedBox(
+              height: size.height*0.1,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Container(
+                    margin: EdgeInsets.fromLTRB(20, 0, 0, 0),
+                      child: Text("Ratings and Reviews",style: TextStyle(fontSize: 20,color: Colors.black,fontWeight: FontWeight.w500),),
+                    alignment: Alignment.centerLeft,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Row(
+                        children: [
+                          Icon(Icons.star,color:Colors.amber,size: 20),
+                          Icon(Icons.star,color:Colors.amber,size: 20),
+                          Icon(Icons.star,color:Colors.amber,size: 20),
+                        ],
+                      ),
+                      Text("20 Ratings and 12 Reviews")
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            Divider(),
+            Expanded(
+                child: ListView(
+                  children: [
+                    Review(size),
+                    Divider(),
+                    Review(size),
+                    Divider(),
+                    Review(size)
+                  ],
+                )
+            ),
+          ],
+        )
+      ),
+    );
+  }
+  Widget Review(Size size)
+  {
+    return Container(
+      child: Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Container(
+                // color: Colors.red,
+                padding: EdgeInsets.all(2),
+                width: size.width*0.5,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Icon(Icons.star,color:Colors.amber,size: 15),
+                    Icon(Icons.star,color:Colors.amber,size: 15),
+                    Icon(Icons.star,color:Colors.amber,size: 15),
+                    Text("Nice ")
+                  ],
+                ),
+              ),
+              Row(
+                children: [
+                  IconButton(
+                      onPressed: (){},
+                      icon: Icon(Icons.thumb_up_alt_outlined,size: 20,)),
+                  IconButton(
+                      onPressed: (){},
+                      icon: Icon(Icons.thumb_down_alt_outlined,size: 20,)),
+                ],
+              )
+            ],
+          ),
+          Container(
+            margin: EdgeInsets.fromLTRB(2, 2, 2, 2),
+            width: size.width*1,
+            height: size.height*0.09,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              children: [
+                Container(
+                  width: size.width*0.4,
+                  height: size.height*0.12,
+                  margin: EdgeInsets.fromLTRB(5, 0, 5, 0),
+                  decoration: BoxDecoration(
+                    // color: Colors.red,
+                      image: DecorationImage(image: AssetImage("assets/images/dogprofile.jpeg"),fit: BoxFit.cover)
+                  ),
+                ),
+                Container(
+                  width: size.width*0.4,
+                  height: size.height*0.12,
+                  margin: EdgeInsets.fromLTRB(5, 0, 5, 0),
+                  decoration: BoxDecoration(
+                    // color: Colors.red,
+                      image: DecorationImage(image: AssetImage("assets/images/dogprofile.jpeg"),fit: BoxFit.cover)
+                  ),
+                ),
+                Container(
+                  width: size.width*0.4,
+                  height: size.height*0.12,
+                  margin: EdgeInsets.fromLTRB(5, 0, 5, 0),
+                  decoration: BoxDecoration(
+                    // color: Colors.red,
+                      image: DecorationImage(image: AssetImage("assets/images/dogprofile.jpeg"),fit: BoxFit.cover)
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+class ClipPathClass extends CustomClipper<Path> {
+  @override
+  Path getClip(Size size) {
+    var path = Path();
+    path.lineTo(0.0, size.height - 30);
+
+    var firstControlPoint = Offset(size.width / 4, size.height);
+    var firstPoint = Offset(size.width / 2, size.height);
+    path.quadraticBezierTo(firstControlPoint.dx, firstControlPoint.dy,
+        firstPoint.dx, firstPoint.dy);
+
+    var secondControlPoint = Offset(size.width - (size.width / 4), size.height);
+    var secondPoint = Offset(size.width, size.height - 30);
+    path.quadraticBezierTo(secondControlPoint.dx, secondControlPoint.dy,
+        secondPoint.dx, secondPoint.dy);
+
+    path.lineTo(size.width, 0.0);
+    path.close();
+
+    return path;
+  }
+
+  @override
+  bool shouldReclip(CustomClipper<Path> oldClipper) => false;
 }
