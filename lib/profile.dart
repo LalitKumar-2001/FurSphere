@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:petsbook/main.dart';
+import 'package:petsbook/medical_record.dart';
 import 'package:petsbook/vaccination.dart';
-import 'deworming.dart';
+import 'package:petsbook/deworming.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({Key? key}) : super(key: key);
@@ -24,18 +26,30 @@ class _ProfilePageState extends State<ProfilePage> {
               decoration: BoxDecoration(
                 image:DecorationImage(image: AssetImage("assets/images/dogprofile.jpeg"),fit: BoxFit.fill),
               ),
-              // child: Image.asset('assets/images/dogprofile.jpeg',fit: BoxFit.fill),
-            ),
-            Container(
-              //width: size.width*1,
-              height: size.height*0.49,
-              //color: Colors.red,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.only(
-                    topLeft:Radius.circular(40.0),
-                    //topRight: Radius.circular(10.0)
-                )
+              child:Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  IconButton(
+                      onPressed: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>MyApp()));
+                      },
+                      icon: Icon(Icons.home),color: Colors.white70,),
+                  IconButton(
+                      onPressed: (){},
+                      icon:Icon(Icons.settings),color: Colors.white70,)
+                ],
               ),
+            ),
+            Expanded(
+              // width: size.width*1,
+              // height: size.height*0.49,
+              // decoration: BoxDecoration(
+              //   borderRadius: BorderRadius.only(
+              //       topLeft:Radius.circular(40.0),
+              //       //topRight: Radius.circular(10.0)
+              //   )
+              // ),
               child:Column(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
@@ -140,8 +154,7 @@ class _ProfilePageState extends State<ProfilePage> {
                           backgroundColor: HexColor("314755")
                       ),
                       onPressed: (){
-
-                        // print("Deworming Done!!");
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>MedicalRecordPage()),);
                       },
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
