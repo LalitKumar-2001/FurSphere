@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:petsbook/profile.dart';
 class VaccinationPage extends StatefulWidget {
   const VaccinationPage({Key? key}) : super(key: key);
 
@@ -20,6 +21,20 @@ class _VaccinationPageState extends State<VaccinationPage> {
               height: size.height*0.35,
               decoration: BoxDecoration(
                 image:DecorationImage(image: AssetImage("assets/images/dogprofile.jpeg"),fit: BoxFit.contain),
+              ),
+              child:Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  IconButton(
+                    onPressed: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>const ProfilePage()),);
+                    },
+                    icon: Icon(Icons.arrow_back_ios),color: Colors.white70,),
+                  IconButton(
+                    onPressed: (){},
+                    icon:Icon(Icons.add,size: 30,),color: Colors.white70)
+                ],
               ),
             ),
             Container(

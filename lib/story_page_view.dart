@@ -33,7 +33,7 @@ class _StoryPageViewState extends State<StoryPageView> {
         controller: controller,
         onComplete: (){Navigator.pop(context);},
         inline: false,
-        repeat: true,
+        repeat: false,
       ),
     );
   }
