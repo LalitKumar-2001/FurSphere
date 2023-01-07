@@ -4,8 +4,7 @@ import 'package:pinput/pinput.dart';
 import 'package:flutter/material.dart';
 
 class Otpscreen extends StatefulWidget {
-  const Otpscreen({super.key});
-
+  const Otpscreen({Key? key}) : super(key: key);
   @override
   State<Otpscreen> createState() => _OtpscreenState();
 }
