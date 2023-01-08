@@ -3,10 +3,12 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:pet/otp.dart';
+
+import 'otp.dart';
+
 
 class Otp extends StatefulWidget {
-  const Otp({super.key});
+  const Otp({Key? key}) : super(key: key);
 
   @override
   State<Otp> createState() => _OtpState();
