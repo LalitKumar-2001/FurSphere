@@ -1,4 +1,8 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:petsbook/login.dart';
+import 'package:petsbook/onboarding.dart';
 
 import 'main.dart';
 
@@ -13,13 +17,15 @@ class _SplashState extends State<Splash> {
   @override
   void initState(){
     super.initState();
-    _navigatetohome();
+    Timer(Duration(seconds: 3),
+            ()=> Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Start()
+        )
+        )
+    );
   }
 
-  _navigatetohome() async{
-    await Future.delayed(Duration(milliseconds: 2000),() {});
-    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>MyApp()));
-  }
+  
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
