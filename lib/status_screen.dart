@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:petsbook/story_page_view.dart';
-import "package:story_view/story_view.dart";
+
 
 class statusScreen extends StatefulWidget {
   const statusScreen({Key? key}) : super(key: key);
