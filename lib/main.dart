@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:get/route_manager.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:petsbook/deworming.dart';
 import 'package:petsbook/homepage.dart';
 import 'package:petsbook/medical.dart';
 import 'package:petsbook/profile.dart';
 import 'package:petsbook/shopping.dart';
 import 'package:petsbook/splashscreen.dart';
-import 'package:petsbook/vaccination.dart';
-import "package:story_view/story_view.dart";
-import 'package:petsbook/status_screen.dart';
+
 
 void main()
 {
-  runApp(MaterialApp(
+  runApp(GetMaterialApp(
     debugShowCheckedModeBanner: false,
     home: Splash(),
   ));
